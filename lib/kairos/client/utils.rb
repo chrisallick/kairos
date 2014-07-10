@@ -6,18 +6,6 @@ module Kairos
 
       API_METHODS = {
         :detect => 'http://api.kairos.io/detect',
-        # :faces_group => 'http://api.skybiometry.com/fc/faces/group.json',
-        # :faces_recognize => 'http://api.skybiometry.com/fc/faces/recognize.json',
-        # :faces_train => 'http://api.skybiometry.com/fc/faces/train.json',
-        # :faces_status => 'http://api.skybiometry.com/fc/faces/status.json',
-        # :tags_get => 'http://api.skybiometry.com/fc/tags/get.json',
-        # :tags_add => 'http://api.skybiometry.com/fc/tags/add.json',
-        # :tags_save => 'http://api.skybiometry.com/fc/tags/save.json',
-        # :tags_remove => 'http://api.skybiometry.com/fc/tags/remove.json',
-        # :account_limits => 'http://api.skybiometry.com/fc/account/limits.json',
-        # :account_users => 'http://api.skybiometry.com/fc/account/users.json',
-        # :account_namespaces => 'http://api.skybiometry.com/fc/account/namespaces.json',
-        # :account_authenticate => 'http://api.skybiometry.com/fc/account/authenticate.json'
       }
 
       def api_crendential
@@ -25,23 +13,33 @@ module Kairos
       end
 
       def make_request(api_method, opts={})
-        if opts[:url].is_a? Array
-          opts[:url] = opts[:url].join(',')
-        end
+        # if opts[:url].is_a? Array
+        #   opts[:url] = opts[:url].join(',')
+        # end
 
-        if opts[:uids].is_a? Array
-          opts[:uids] = opts[:uids].join(',')
-        end
+        # if opts[:uids].is_a? Array
+        #   opts[:uids] = opts[:uids].join(',')
+        # end
         
-        if opts[:tids].is_a? Array
-          opts[:tids] = opts[:tids].join(',')
-        end
+        # if opts[:tids].is_a? Array
+        #   opts[:tids] = opts[:tids].join(',')
+        # end
 
-        if opts[:pids].is_a? Array
-          opts[:pids] = opts[:pids].join(',')
-        end
+        # if opts[:pids].is_a? Array
+        #   opts[:pids] = opts[:pids].join(',')
+        # end
         
-        response = JSON.parse( RestClient.post(API_METHODS[ api_method ], opts.merge(api_crendential)).body )
+        # response = JSON.parse( RestClient.post(API_METHODS[ api_method ], opts.merge(api_crendential)).body )
+        response = JSON.parse( RestClient::Request.execute(
+          :method => :post,
+          :url => API_METHODS[ api_method ],
+          :headers => {
+            "app_id" => app_id,
+            "app_key" => app_key
+          },
+          :payload => opts.to_json
+        ))
+        
         if %w/success partial/.include?(response['status'])
           response
         elsif response['status'] == 'failure'

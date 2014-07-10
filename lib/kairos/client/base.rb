@@ -1,7 +1,7 @@
 require File.expand_path('../utils', __FILE__)
 require File.expand_path('../recognition', __FILE__)
-require File.expand_path('../tags', __FILE__)
-require File.expand_path('../accounts', __FILE__)
+#require File.expand_path('../tags', __FILE__)
+#require File.expand_path('../accounts', __FILE__)
 
 module Kairos
   module Client
@@ -31,8 +31,8 @@ module Kairos
 
       include Kairos::Client::Utils
       include Kairos::Client::Recognition
-      include Kairos::Client::Tags
-      include Kairos::Client::Accounts
+      # include Kairos::Client::Tags
+      # include Kairos::Client::Accounts
 
 
       def initialize(opts={})
