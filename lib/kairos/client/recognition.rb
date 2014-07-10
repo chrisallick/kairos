@@ -3,7 +3,7 @@ module Kairos
     module Recognition
       def detect(opts={})
         opts.assert_valid_keys(:url, :file, :detector, :attributes, :callback, :callback_url)
-        make_request(:faces_detect, opts)
+        make_request(:detect, opts)
       end
 
       def faces_group(opts={})
