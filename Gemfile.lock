@@ -1,11 +1,19 @@
 PATH
   remote: .
   specs:
-    kairos (0.0.2)
+    kairos (0.0.7)
+      json (>= 1.4.6)
+      rest-client (>= 1.6.1)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    json (1.8.1)
+    mime-types (2.3)
+    netrc (0.7.7)
+    rest-client (1.7.1)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
 
 PLATFORMS
   ruby
