@@ -1,10 +1,11 @@
 Note: This gem is still under development, create issues if you meet any problem when using it https://github.com/chrisallick/kairos/issues
 
-Face is a ruby library of Kairos Face Detection and Recognition API.
+Kairos is a ruby library of Kairos Face Detection and Recognition API.
 
-== Getting Started
-  
-  sudo gem install kairos
+It is completely ripped off from https://github.com/rociiu/face by http://rociiu.com/
+
+== Getting Started  
+  gem install kairos
 
   irb
   >> require 'kairos'
@@ -12,6 +13,7 @@ Face is a ruby library of Kairos Face Detection and Recognition API.
 
 Detect Faces with Urls:
 
-  >> client.detect(:urls => ['http://img3.wikia.nocookie.net/__cb20120804165550/assassinscreed/images/e/ed/New_engine_face_model_test_by_Michel_Thibault.png'])
+  # returns a Hash not a raw JSON string
+  >> puts client.detect(:urls => ['http://img3.wikia.nocookie.net/__cb20120804165550/assassinscreed/images/e/ed/New_engine_face_model_test_by_Michel_Thibault.png'])
 
-Author: Roc Yu (chrisallick@gmail.com)
+Author: Chris Allick (chrisallick@gmail.com)
