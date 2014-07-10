@@ -12,12 +12,6 @@ Face is a ruby library of Kairos Face Detection and Recognition API.
 
 Detect Faces with Urls:
 
-  >> client.faces_detect(:urls => ['http://farm6.static.flickr.com/5220/5431220348_fbdf80ae9.jpg'])
-  
-Detect Faces with Raw image data:
-
-  >> client.faces_detect(:file => File.new('image.jpg', 'rb'))
- 
-More Documentation refer to http://www.skybiometry.com/Documentation.
+  >> client.detect(:urls => ['http://img3.wikia.nocookie.net/__cb20120804165550/assassinscreed/images/e/ed/New_engine_face_model_test_by_Michel_Thibault.png'])
 
 Author: Roc Yu (chrisallick@gmail.com)
