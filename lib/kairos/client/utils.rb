@@ -40,11 +40,11 @@ module Kairos
           :payload => opts.to_json
         ))
         
-        if %w/success partial/.include?(response['status'])
-          response
-        elsif response['status'] == 'failure'
-          raise FaceError.new("Error: #{response['error_code']}, #{response['error_message']}")
-        end
+        # if %w/success partial/.include?(response['status'])
+        return response
+        # elsif response['status'] == 'failure'
+        #   raise FaceError.new("Error: #{response['error_code']}, #{response['error_message']}")
+        # end
       end
 
       def user_auth_param
