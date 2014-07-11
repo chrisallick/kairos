@@ -2,7 +2,7 @@ Note: This gem is still under development, create issues if you meet any problem
 
 Kairos is a ruby library of Kairos Face Detection and Recognition API.
 
-It is completely ripped off from https://github.com/rociiu/face by http://rociiu.com/
+The library itself is completely "modeled after" (ripped off from) https://github.com/rociiu/face by http://rociiu.com/
 
 == Getting Started  
   gem install kairos
