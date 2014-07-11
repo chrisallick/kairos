@@ -11,9 +11,9 @@ The library itself is completely "modeled after" (ripped off from) https://githu
   >> require 'kairos'
   >> client = Kairos.get_client(:app_id => 'your_api_app_id', :app_key => 'your_api_app_key')
 
-Detect Faces with Urls:
+Detect faces from a URL:
 
   # returns a Hash not a raw JSON string
-  >> puts client.detect(:urls => ['http://img3.wikia.nocookie.net/__cb20120804165550/assassinscreed/images/e/ed/New_engine_face_model_test_by_Michel_Thibault.png'])
+  >> puts client.detect(:urls => 'http://img3.wikia.nocookie.net/__cb20120804165550/assassinscreed/images/e/ed/New_engine_face_model_test_by_Michel_Thibault.png')
 
 Author: Chris Allick (chrisallick@gmail.com)
